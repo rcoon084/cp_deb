@@ -12,33 +12,32 @@ using namespace std;
  *  2. INTEGER m
  */
 
-long long gameWithCells(long long n, long long m) {
+long long gameWithCells(long long n, long long m, long long a) {
     long long rows = n;
     long long cols = m;
-    if (rows % 2 != 0 && rows > 2) {
-        rows++;
+
+    if (rows % a != 0 && rows > a) {
+        rows += rows % a;
     } 
-    if (cols % 2 != 0 && cols > 2) {
-        cols++;
+    if (cols % a != 0 && cols > a) {
+        cols += cols % a;
         cout << "a " << endl;
     }
-    cout << rows << endl << cols << endl;
-    if (rows == 1 && cols == 1) {
-        return (rows * cols);
-    } else if (rows < 2 || cols < 2) {
-        return (rows * cols) / 2;
+
+    if (rows < a || cols < a) {
+        return (rows * cols) / a;
     } else {
-        return (rows * cols) / 4;
+        return (rows * cols) / (a*a);
     }
 }
 
 
 int main()
 {
-    long long n, m;
-    cin >> n >> m;
+    long long n, m, a;
+    cin >> n >> m >> a;
 
-    cout << gameWithCells(n, m);
+    cout << gameWithCells(n, m, a);
 
     return 0;
 }
