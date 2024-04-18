@@ -21,7 +21,6 @@ long long gameWithCells(long long n, long long m, long long a) {
     } 
     if (cols % a != 0 && cols > a) {
         cols += cols % a;
-        cout << "a " << endl;
     }
 
     if (rows < a || cols < a) {
