@@ -17,13 +17,14 @@ long long gameWithCells(long long n, long long m, long long a) {
     long long cols = m;
 
     if (rows % a != 0 && rows > a) {
-        rows += rows % a;
+        rows += (a - (rows % a));
     } 
     if (cols % a != 0 && cols > a) {
-        cols += cols % a;
+        cols += (a - (cols % a));
     }
-
-    if (rows < a || cols < a) {
+    if (rows < a && cols < a) {
+        return 1;
+    } else if (rows < a || cols < a) {
         return (rows * cols) / a;
     } else {
         return (rows * cols) / (a*a);
