@@ -1,0 +1,9 @@
+-- Practice: 
+ 	+Strings and char diff
+ 	+Math
+ 	+Constructive algorithms
+ 	+Graph matching
+ 	+Implementation
+ 	+Shortest paths
+ 	
+ 	
