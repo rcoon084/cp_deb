@@ -26,27 +26,31 @@ int main(int argc, char const *argv[])
             count++;
             cout << patitass[0] << " " << count << endl;
             patitass[0] = "";
+            patitass[i] = "";
         }
         if (patita == patitass[1])
         {
             count++;
             cout << patitass[1] << " " << count << endl;
             patitass[1] = "";
+            patitass[i] = "";
         }
         if (patita == patitass[2])
         {
             count++;
             cout << patitass[2] << " " << count << endl;
             patitass[2] = "";
+            patitass[i] = "";
         }
         if (patita == patitass[3])
         {
             count++;
             cout << patitass[3] << " " << count << endl;
             patitass[3] = "";
+            patitass[i] = "";
         }
 
-        if (count >= 2)
+        if (count > 1)
         {
             total++;
         }
