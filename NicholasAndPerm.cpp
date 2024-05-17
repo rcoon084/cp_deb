@@ -2,43 +2,54 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
-    int n, min = 100, max = 0, imin = 0, imax = 0;
+    int n, max = -2, min = 99999, imax = 0, imin = 0;
     cin >> n;
+    vector<int> nums;
 
     for (int i = 0; i < n; i++)
     {
-        int e;
-        cin >> e;
-        if (e > max)
+        int s;
+        cin >> s;
+        if (s <= min)
         {
-            max = e;
-            imax = i;
-        }
-        if (e < min)
-        {
-            min = e;
+            min = s;
             imin = i;
         }
-    }
-    int di = 0, df = 0, d = abs(imax - imin);
-
-
-    if (d == n - 1){
-        cout << d;
-    }else if (imax < imin){
-        di = imax;
-        df = n - imin;
-    }else if (imax >= imin){
-        di = imin;
-        df = n - imax;
+        if (s >= max)
+        {
+            max = s;
+            imax = i;
+        }
+        nums.push_back(s);
     }
 
-    if (df >= di){
-        cout << (df + 1) - di;
-    }else{
-        cout << (di + 1) - df;
+
+    if (imax >= imin)
+    {
+        if ((n - imax) > (imin))
+        {
+            imax = n - 1;
+            cout << imax - imin;
+        }
+        else
+        {   
+            imin = 0;
+            cout << imax;
+        }
     }
-    
+    else
+    {
+        if ((n - imin) > (imax))
+        {
+            imin = n - 1;
+            cout << imin - imax;
+        }
+        else
+        {
+            imax = 0;
+            cout << imin;
+        }
+    }
 }
